@@ -1,6 +1,5 @@
 import { TrichyWeb } from "../Components/Card";
 import { Link } from "react-router-dom";
-import React from "react";
 
 const Trichy1 = ({
   name,

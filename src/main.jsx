@@ -1,31 +1,27 @@
-import React from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import { createBrowserRouter, RouterProvider, Outlet, Navigate } from "react-router-dom"
-import Header from './Components/Header'
-import Hero from './Components/Hero'
-import Doctor from './Components/Doctor'
-import DoctorSkill from './Components/DoctorSkill'
-import Web from './Components/Web'
-import Footer from './Components/Footer'
-import Trichy from './visit/trichy'
-import Karur from './visit/Karur'
-import Appoinments from './DocApp/Appoinments'
-import PaymentQR from './DocApp/PaymentQR'
-import AIchat from './Components/AIchat'
-import Login from './Components/Login'
-import Register from './Components/Register'
-import Home from './Components/Home'
-import Timer from './Components/Timer'
-import ErrorPage from './Components/ErrorPage'
-
-
-
-
-
-
-
-
+import React from "react";
+import { createRoot } from "react-dom/client";
+import "./index.css";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Outlet,
+  Navigate,
+} from "react-router-dom";
+import Header from "./Components/Header";
+import Doctor from "./Components/Doctor";
+import DoctorSkill from "./Components/DoctorSkill";
+import Web from "./Components/Web";
+import Footer from "./Components/Footer";
+import Appoinments from "./DocApp/Appoinments";
+import PaymentQR from "./DocApp/PaymentQR";
+import AIchat from "./Components/AIchat";
+import Login from "./Components/Login";
+import Register from "./Components/Register";
+import Home from "./Components/Home";
+import Timer from "./Components/Timer";
+import ErrorPage from "./Components/ErrorPage";
+import Trichys from "./visit/Trichys";
+import Karurs from "./visit/Karurs";
 
 const Click = () => {
   return (
@@ -36,22 +32,21 @@ const Click = () => {
       <DoctorSkill />
       <Web />
     </>
-  )
-}
+  );
+};
 
 const AppLayout = () => {
   return (
     <>
-      <Timer/>
+      <Timer />
       <Header />
       <Outlet />
       <Footer />
     </>
-  )
-}
+  );
+};
 
 const router = createBrowserRouter([
-
   {
     path: "/",
     element: <AppLayout />,
@@ -59,20 +54,24 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Click />,
-      }, {
+      },
+      {
         path: "/Trichy",
-        element: <Trichy />,
-      }, {
+        element: <Trichys />,
+      },
+      {
         path: "/karur",
-        element: <Karur />,
-      }, {
+        element: <Karurs />,
+      },
+      {
         path: "/Appoinments",
         element: <Appoinments />,
       },
       {
         path: "/PaymentQR",
         element: <PaymentQR />,
-      }, {
+      },
+      {
         path: "/AIchat",
         element: <AIchat />,
       },
@@ -84,20 +83,19 @@ const router = createBrowserRouter([
         path: "/login",
         element: <Login />,
       },
-       {
+      {
         path: "/register",
-        element: <Register />
-      }, 
+        element: <Register />,
+      },
       // {
       //   path: "/Register",
       //   element: <Navigate to="/register" replace />
       // },
     ],
-     errorElement:<ErrorPage/>,
+    errorElement: <ErrorPage />,
   },
+]);
 
-])
-
-createRoot(document.getElementById('root')).render(
+createRoot(document.getElementById("root")).render(
   <RouterProvider router={router} />
-)
+);
